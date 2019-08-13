@@ -5,11 +5,12 @@ import (
 	"net/http"
 )
 
-func index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello world")
+func index(res http.ResponseWriter, req *http.Request) {
+	fmt.Fprint(res, "Hello world")
 }
 
 func startRoutes() {
 	http.HandleFunc("/", index)
+	http.HandleFunc("/contacts", process)
 	http.ListenAndServe(":8080", nil)
 }
