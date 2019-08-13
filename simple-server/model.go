@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Contact struct {
 	ID    int    `json: "id"`
 	Name  string `json:"name"`
@@ -8,3 +10,7 @@ type Contact struct {
 }
 
 type Contacts []Contact
+
+func (c *Contact) toString() string {
+	return fmt.Sprintf("%d,%s,%s,%s", c.ID, c.Name, c.City, c.Phone)
+}
