@@ -1,0 +1,10 @@
+package main
+
+type Contact struct {
+	ID    int    `json: "id"`
+	Name  string `json:"name"`
+	City  string `json:"city"`
+	Phone string `json:"phone"`
+}
+
+type Contacts []Contact
